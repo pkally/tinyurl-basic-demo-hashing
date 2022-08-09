@@ -22,7 +22,7 @@ module.exports = (redis_client: any, mongodb_client:any) => {
 		await redis_client.set(hash_slice, new_url);
 		await mongodb_client.db('short-url').collection('mapping').insertOne({hash: hash_slice, url: new_url});
 
-		res.status(200).json({status: 'ok', new_url: '127.0.0.1:80/' + hash_slice});
+		res.status(200).json({status: 'ok', new_url: 'http://127.0.0.1/' + hash_slice});
 	});
 
 	return router;

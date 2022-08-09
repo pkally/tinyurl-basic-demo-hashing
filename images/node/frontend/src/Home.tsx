@@ -9,8 +9,8 @@ export default function Home() {
 			<div className={styles.section_1}>
 				<UrlForm/>
 				<div className={styles.intro}>
-					<h2 className={styles.title}>Welcome to TinyURL</h2>
-					<h3 className={styles.subtitle}>A better TinyURL...</h3>
+					<h2 className={styles.title}>Welcome to ShorterURL(demo)</h2>
+					<h3 className={styles.subtitle}>Make urls smaller...</h3>
 
 				</div>
 

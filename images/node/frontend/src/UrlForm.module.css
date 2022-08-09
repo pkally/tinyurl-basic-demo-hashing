@@ -57,9 +57,5 @@
 	display: flex;
 	justify-content: center;	
 	align-items: center;
-}
-
-.hcaptcha_container {
-  display: flex;
-  justify-content: center;
+	user-select: text;
 }

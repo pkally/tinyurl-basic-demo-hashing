@@ -6,12 +6,9 @@ export default function Header() {
 	return (
 		<header className={styles.container}>
 			<div className={styles.left_container}>
-				<h1 className={styles.heading}>TinyURL</h1>					
-
+				<h1 className={styles.heading}>ShorterURL</h1>					
 				<nav className={styles.navigation}>
 					<Link to="/">Home</Link>
-					<Link to="/stats">Statistics</Link>	
-					<Link to="/about">About</Link>
 				</nav>
 
 			</div>
