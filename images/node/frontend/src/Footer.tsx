@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<footer className={styles.container}>
 			<div className={styles.left_container}>
-				<p className={styles.references}>Copyright @ TinyURL</p>	
+				<p className={styles.references}>Copyright @ ShorterURL</p>	
 			</div>
 
 			<div className={styles.right_container}>
