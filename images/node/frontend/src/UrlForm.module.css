@@ -1,0 +1,65 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+
+	width: 350px;
+  border-radius: 3px;
+  padding: 15px;
+  background-color: var(--gray-1);
+  border: 1px solid var(--gray-3);
+}
+
+.container > label {
+  margin-bottom: 5px;
+}
+
+.container > input[type=text], .container > input[type=password] {
+  max-height: 45px;
+  min-height: 45px;
+  height: 45px;
+  
+  padding: 10px;
+  border: 1px solid var(--gray-3);
+  border-radius: 3px;
+	outline: none;
+
+  margin-bottom: 10px;
+}
+.container > input[type=text]:focus, .container > input[type=password]:focus {
+  border: 2px solid var(--gray-3);
+}
+
+.url_form_button {
+  max-height: 45px;
+  min-height: 45px;
+  height: 45px;
+
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: hsl(143, 74%, 35%);
+  color: var(--gray-2);
+  cursor: pointer;
+
+	margin-bottom: 10px;
+}
+.url_form_button:active {
+	background-color: hsl(143, 74%, 30%);
+}
+
+.retr_url_container {
+	background-color: var(--gray-1);
+  border: 1px solid var(--gray-3);
+  border-radius: 3px;
+	padding: 5px;
+	display: flex;
+	justify-content: center;	
+	align-items: center;
+}
+
+.hcaptcha_container {
+  display: flex;
+  justify-content: center;
+}

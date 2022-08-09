@@ -1,0 +1,27 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap-reverse;
+	background-color: var(--gray-2);
+}
+
+.section_1 {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.intro {
+	padding: 20px;
+}
+.intro > .title, .intro > .subtitle {
+	margin: 0;
+}
+.intro > .title {
+	margin-bottom: 5px;
+	color: var(--violet-9);
+}
+.intro > .subtitle {
+	color: var(--violet-3)
+}

@@ -1,0 +1,77 @@
+---
+version: "3.3"
+services:
+# stores temporary data for faster transactions
+  cache:
+    image:  redis/short-url:1.0
+    build: images/redis/
+    container_name: redis-short-url
+    network_mode: host
+    ports:
+      - 6379/tcp
+#    volumes:
+#      - type: volume
+#        source: redis-data
+#        target: /var/lib/redis/
+
+# prim-db is the mongodb database
+# for storing main information (customers/users)
+  prim-db:
+    image:  mongodb/short-url:1.0
+    build: images/mongodb/
+    container_name: mongodb-short-url
+    network_mode: host
+    ports:
+      - 27017/tcp
+#    volumes:
+#      - type: volume
+#        source: mongodb-data
+#        target: /var/lib/mongo/
+
+# sec-db is the postgres database
+# for storing hierarchical information
+  sec-db:
+    image:  postgres/short-url:1.0
+    build: images/postgres/
+    container_name: postgres-short-url
+    network_mode: host
+    env_file: postgres.env
+    ports:
+      - 5432/tcp
+#    volumes:
+#      - type: volume
+#        source: postgres-data
+#        target: /var/lib/pgsql/data/
+
+# the actual web server for the website
+# fetches web content on behalf of user
+  web-server:
+    image: nginx/short-url:1.0
+    build: images/nginx/
+    container_name: web-server-short-url
+    network_mode: host
+    ports:
+      - 8080/tcp
+
+  wep-app:
+    image: node/short-url:1.0
+    build: images/node/
+    container_name: web-app-short-url
+    network_mode: host
+#    volumes:
+#      - type: volume
+#        source: web-app-data
+#        target: /app/
+    ports:
+      - 80/tcp
+
+#volumes:
+#  postgres-data:
+#  redis-data:
+#  mongodb-data:
+#  web-app-data:
+
+networks:
+  short-url-backend:
+    name: short-url-backend-network
+  
